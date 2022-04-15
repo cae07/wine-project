@@ -120,23 +120,23 @@
 }
 
 #next-button {
-  margin-right: 15px;
+  font-size: 1em;
+  font-weight: 900;
+  margin: 15px 8px;
 }
 
 .next-button-1 {
-  border: 0.8px solid;
-  border-color: rgb(143, 0, 143);
+  border: 1px solid rgb(143, 0, 143);
   color: rgb(143, 0, 143);
-  height: 30px;
+  height: 40px;
   padding: 5px;
-  width: 30px;
+  width: 40px;
 }
 
 .next-button-2 {
-  border: 0.8px solid;
-  border-color: rgb(143, 0, 143);
+  border: 1px solid rgb(143, 0, 143);
   color: rgb(143, 0, 143);
-  width: 60px;
+  width: 80px;
 }
 
 .button-next {

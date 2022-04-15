@@ -20,7 +20,6 @@ function PrincipalList() {
   }, [])
   
   const handleClick = (product) => {
-    console.log(product.flag.split("/")[7].split(".")[0]);
     setProduct(product);
   }
 
