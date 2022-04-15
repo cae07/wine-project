@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import myContext from '../../context/myContext';
 import getProducts from '../../services/apiService';
 
@@ -7,6 +8,7 @@ function PrincipalList() {
   const [products, setProducts] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [actualPage, setActualPage] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getFirstProducts() {
@@ -17,11 +19,12 @@ function PrincipalList() {
       console.log(firstProducts);
     }
     getFirstProducts();
-  }, [])
+  }, []);
   
   const handleClick = (product) => {
     setProduct(product);
-  }
+    navigate(`/${product.id}`);
+  };
 
   return (
     <main className="list-container">
