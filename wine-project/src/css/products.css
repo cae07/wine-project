@@ -57,6 +57,14 @@
   padding: 10px;
 }
 
+/* https://www.devmedia.com.br/css-opacity/38106 */
+.product-card > img:first-child {
+  opacity: 0.8;
+  left: 65px;
+  position: relative;
+  top: 140px;
+}
+
 .full-price {
   font-size: 0.9em;
   margin: 5px 0;

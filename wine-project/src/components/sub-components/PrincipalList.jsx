@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import myContext from '../../context/myContext';
 import getProducts from '../../services/apiService';
 
 function PrincipalList() {
+  const { setProduct } = useContext(myContext);
   const [products, setProducts] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [actualPage, setActualPage] = useState(0);
@@ -16,9 +18,11 @@ function PrincipalList() {
     }
     getFirstProducts();
   }, [])
-
-  console.log(products);
-  console.log(totalItems);
+  
+  const handleClick = (product) => {
+    console.log(product.flag.split("/")[7].split(".")[0]);
+    setProduct(product);
+  }
 
   return (
     <main className="list-container">
@@ -27,6 +31,11 @@ function PrincipalList() {
         {products.map((product) => (
           <section className="cards" key={ product.id }>
             <div className="product-card">
+              <img
+                src={ product.flag }
+                alt={ `bandeira do país ${product.flag.split("/")[7].split(".")[0]}` }
+                width="35px"
+              />
               <img src={ product.image } alt={ product.name } width="100px" />
               <p>{ product.name }</p>
               <div className="full-price">
@@ -44,7 +53,12 @@ function PrincipalList() {
                 { `NÃO SÓCIO R$ ${(product.priceNonMember).toFixed(2)}` }
               </span>
             </div>
-            <button>ADICIONAR</button>
+            <button
+              type="button"
+              onClick={ () => handleClick(product) }
+            >
+              ADICIONAR
+            </button>
           </section>
         ))}
       </div>
