@@ -4,7 +4,7 @@ import '../css/header.css';
 
 function Header() {
   return(
-    <div className="header-container">
+    <header className="header-container">
       <div>
         <img
           src={ logo }
@@ -12,7 +12,7 @@ function Header() {
           width="100px"
         />
       </div>
-      <div>
+      <nav>
         <button id="header-buttons">
           Clube
         </button>
@@ -28,8 +28,8 @@ function Header() {
         <button id="header-buttons">
           Eventos
         </button>
-      </div>
-      <div>
+      </nav>
+      <nav>
         <button id="icons-buttons">
           <i className="fas fa-search" />
         </button>
@@ -39,8 +39,8 @@ function Header() {
         <button id="icons-buttons">
         <i className="fa fa-shopping-cart" aria-hidden="true" />
         </button>
-      </div>
-    </div>
+      </nav>
+    </header>
     
   );
 }
