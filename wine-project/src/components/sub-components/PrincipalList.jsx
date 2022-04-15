@@ -72,10 +72,9 @@ function PrincipalList() {
         </button>
         <button
           type="button"
-          id="next-button"
           className="button-next"
         >
-          { `Próximo >>` }
+          { `... Próximo >>` }
         </button>
       </nav>
     </main>
