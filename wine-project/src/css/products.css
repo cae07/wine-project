@@ -91,6 +91,9 @@
   background-color: rgb(54, 189, 54);
   border: none;
   border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  font-weight: 900;
   min-width: 201px;
   height: 40px;
   margin-top: 10px;
