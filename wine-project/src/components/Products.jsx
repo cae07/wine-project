@@ -1,11 +1,12 @@
 import React from 'react';
-import { PrincipalAside } from './sub-components';
+import { PrincipalAside, PrincipalList } from './sub-components';
 import "../css/products.css";
 
 function Products() {
   return (
-    <section>
+    <section className="principal-container">
       <PrincipalAside />
+      <PrincipalList />
     </section>
   )
 }
