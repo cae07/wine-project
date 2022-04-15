@@ -5,6 +5,7 @@
 
 .header-container {
   align-items: center;
+  border-bottom: 2px solid rgb(194, 194, 194);
   display: flex;
   justify-content: space-between;
 }
@@ -20,11 +21,6 @@
   padding: 5px;
 }
 
-#header-buttons:hover, #icons-buttons:hover {
-  box-shadow: 3px 3px 5px;
-  color: palevioletred;
-}
-
 #icons-buttons {
   background: none;
   background-color: none;
@@ -35,4 +31,9 @@
   height: 40px;
   margin: 5px 5px;
   width: 40px;
+}
+
+#header-buttons:hover, #icons-buttons:hover {
+  box-shadow: 3px 3px 5px;
+  color: palevioletred;
 }

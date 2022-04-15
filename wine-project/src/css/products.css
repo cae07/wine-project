@@ -1,0 +1,17 @@
+.aside-container {
+  margin: 40px;
+}
+
+.aside-container > h3 {
+  margin-top: 20px;
+}
+
+.radios-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.radios-container > label {
+  margin-top: 25px;
+}
