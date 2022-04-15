@@ -1,0 +1,4 @@
+// iniciando esLint padrão trybe
+{
+  "extends": "trybe-frontend"
+}
