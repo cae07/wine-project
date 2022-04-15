@@ -35,7 +35,7 @@ function PrincipalList() {
             <div className="product-card">
               <img
                 src={ product.flag }
-                alt={ `bandeira do país ${product.flag.split("/")[7].split(".")[0]}` }
+                alt={ `bandeira ${product.country}` }
                 width="35px"
               />
               <img src={ product.image } alt={ product.name } width="100px" />
