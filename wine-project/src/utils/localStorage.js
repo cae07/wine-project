@@ -1,5 +1,6 @@
 const setItemsSold = (products) => {
   localStorage.setItem('cart', JSON.stringify(products))
+  return;
 };
 
 const getItemsSold = () => {

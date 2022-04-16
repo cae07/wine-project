@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import myContext from '../../context/myContext';
 import { getProducts } from '../../services/apiService';
+import { getItemsSold, setItemsSold } from '../../utils/localStorage';
 
 function PrincipalList() {
   const {
@@ -16,9 +17,21 @@ function PrincipalList() {
     setProductPage,
     totalItems,
     setTotalItems,
+    setSoldItems,
    } = useContext(myContext);
   const navigate = useNavigate();
 
+  // lidar com localStorage quando pagina abrir
+  useEffect(() => {
+    const cartItems = getItemsSold();
+    if (!cartItems) {
+      setItemsSold([]);
+    }
+
+    setSoldItems(cartItems);
+  }, []);
+
+  // faz primeira busca api quando pagina abrir
   useEffect(() => {
     async function getFirstProducts() {
       const firstProducts = await getProducts(1);
