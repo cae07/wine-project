@@ -1,8 +1,20 @@
 import React from 'react';
 import logo from '../images/logo.jpeg';
 import '../css/header.css';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleHeaderButton = ({ target: { value } }) => {
+    console.log(value !== "Loja");
+    if (value !== "Loja") {
+      return navigate("/maintenence");
+    }
+
+    return navigate("/");
+  };
+
   return(
     <header className="header-container">
       <div>
@@ -13,19 +25,44 @@ function Header() {
         />
       </div>
       <nav>
-        <button id="header-buttons">
+        <button
+          type="button"
+          id="header-buttons"
+          value="Clube"
+          onClick={ (e) => handleHeaderButton(e) }
+        >
           Clube
         </button>
-        <button id="header-buttons">
+        <button
+          type="button"
+          id="header-buttons"
+          value="Loja"
+          onClick={ (e) => handleHeaderButton(e) }
+        >
           Loja
         </button>
-        <button id="header-buttons">
+        <button
+          type="button"
+          id="header-buttons"
+          value="Produtores"
+          onClick={ (e) => handleHeaderButton(e) }
+        >
           Produtores
         </button>
-        <button id="header-buttons">
+        <button
+          type="button"
+          id="header-buttons"
+          value="Ofertas"
+          onClick={ (e) => handleHeaderButton(e) }
+        >
           Ofertas
         </button>
-        <button id="header-buttons">
+        <button
+          type="button"
+          id="header-buttons"
+          value="Eventos"
+          onClick={ handleHeaderButton }
+        >
           Eventos
         </button>
       </nav>
