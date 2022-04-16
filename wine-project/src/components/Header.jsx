@@ -14,6 +14,8 @@ function Header() {
       return navigate("/maintenence");
     }
 
+    // pesquisa sobre reload de pag
+    // https://pt.stackoverflow.com/questions/251826/reload-de-p%C3%A1gina-web
     window.location.reload();
   };
 
