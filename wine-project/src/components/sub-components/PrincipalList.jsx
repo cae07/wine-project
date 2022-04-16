@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import myContext from '../../context/myContext';
-import getProducts from '../../services/apiService';
+import { getProducts } from '../../services/apiService';
 
 function PrincipalList() {
   const {

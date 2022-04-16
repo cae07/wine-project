@@ -3,7 +3,7 @@ import logo from '../images/logo.jpeg';
 import '../css/header.css';
 import { useNavigate } from 'react-router-dom';
 import { SearchBar } from './sub-components';
-import getProducts from '../services/apiService';
+import { getProducts } from '../services/apiService';
 import myContext from '../context/myContext';
 
 function Header() {
