@@ -8,6 +8,8 @@ function PrincipalList() {
   const [products, setProducts] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [actualPage, setActualPage] = useState(0);
+  const [productPage, setProductPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,14 +18,31 @@ function PrincipalList() {
       setProducts(firstProducts.items);
       setTotalItems(firstProducts.totalItems);
       setActualPage(firstProducts.page);
-      console.log(firstProducts);
+      setProductPage(actualPage);
+      setTotalPages(firstProducts.totalPages);
     }
     getFirstProducts();
   }, []);
   
-  const handleClick = (product) => {
+  const handleProductClick = (product) => {
     setProduct(product);
     navigate(`/${product.id}`);
+  };
+
+  const handlePage = async ({ target }) => {
+    const pageNumber = target.innerText;
+    const getNewPage = await getProducts(pageNumber);
+    setProducts(getNewPage.items);
+    setProductPage(getNewPage.page);
+  };
+
+  const handleNextPage = async () => {
+    const getNewPage = await getProducts(productPage + 1);
+    setProducts(getNewPage.items);
+    setProductPage(getNewPage.page);
+    if (productPage >= 3 ) {
+      setActualPage(getNewPage.page - 2);
+    }
   };
 
   return (
@@ -57,7 +76,7 @@ function PrincipalList() {
             </div>
             <button
               type="button"
-              onClick={ () => handleClick(product) }
+              onClick={ () => handleProductClick(product) }
             >
               ADICIONAR
             </button>
@@ -69,6 +88,7 @@ function PrincipalList() {
           type="button"
           id="next-button"
           className="next-button-1"
+          onClick={ (e) => handlePage(e) }
         >
             { actualPage }
         </button>
@@ -76,6 +96,7 @@ function PrincipalList() {
           type="button"
           id="next-button"
           className="next-button-2"
+          onClick={ (e) => handlePage(e) }
         >
         { actualPage + 1 }
         </button>
@@ -83,15 +104,21 @@ function PrincipalList() {
           type="button"
           id="next-button"
           className="next-button-1"
+          onClick={ (e) => handlePage(e) }
         >
         { actualPage + 2 }
         </button>
+        {totalPages !== productPage
+        ?
         <button
           type="button"
           className="button-next"
+          onClick={ handleNextPage }
         >
           { `... Próximo >>` }
         </button>
+        : null
+        }
       </nav>
     </main>
   );

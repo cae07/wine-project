@@ -22,16 +22,6 @@
   margin-top: 25px;
 }
 
-.socio-price {
-  display: flex;
-  margin-top: 5px;
-}
-
-.socio-price > p {
-  font-size: 0.9em;
-  margin-right: 5px;
-} 
-
 .list-container {
   margin-top: 20px;
 }
@@ -52,10 +42,11 @@
   box-shadow: 10px 10px 20px rgb(194, 191, 191);
   display: flex;
   flex-direction: column;
+  font-size: 0.9em;
+  height: 300px;
   justify-content: center;
   margin-top: 15px;
   max-width: 180px;
-  height: 300px;
   padding: 10px;
 }
 
@@ -69,7 +60,7 @@
 
 .full-price {
   font-size: 0.9em;
-  margin: 5px 0;
+  margin: 15px 0;
 }
 
 .full-price > span {
@@ -96,6 +87,16 @@
   font-size: 1.2em;
   font-weight: 900;
 }
+
+.socio-price {
+  display: flex;
+  margin-top: 5px;
+}
+
+.socio-price > p {
+  font-size: 0.9em;
+  margin-right: 5px;
+} 
 
 .cards > button {
   background-color: rgb(54, 189, 54);
