@@ -1,10 +1,13 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Main, ProductDetails } from './pages';
 
 function App() {
   return (
-    <div>
-      <h1>inicia o Projeto</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={ <Main /> } />
+      <Route path="/:id" element={ <ProductDetails />} />
+    </Routes>
   );
 }
 

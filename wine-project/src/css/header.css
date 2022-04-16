@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.header-container {
+  align-items: center;
+  border-bottom: 2px solid rgb(194, 194, 194);
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-buttons {
+  background: none;
+  background-color: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px;
+  color: gray;
+  margin: 15px 15px;
+  padding: 5px;
+}
+
+#icons-buttons {
+  background: none;
+  background-color: none;
+  border: none;
+  border-radius: 100%;
+  box-shadow: 2px 2px 3px gray;
+  color: gray;
+  height: 40px;
+  margin: 5px 5px;
+  width: 40px;
+}
+
+#header-buttons:hover, #icons-buttons:hover {
+  box-shadow: 3px 3px 5px;
+  color: palevioletred;
+}
