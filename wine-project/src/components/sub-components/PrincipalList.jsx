@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import myContext from '../../context/myContext';
 import { getProducts } from '../../services/apiService';
@@ -14,8 +14,9 @@ function PrincipalList() {
     setTotalPages,
     productPage,
     setProductPage,
+    totalItems,
+    setTotalItems,
    } = useContext(myContext);
-  const [totalItems, setTotalItems] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -89,6 +90,8 @@ function PrincipalList() {
           </section>
         ))}
       </div>
+      {totalItems >  0 && totalItems > 60
+      ?
       <nav className="next-buttons-container">
         <button
           type="button"
@@ -126,6 +129,8 @@ function PrincipalList() {
         : null
         }
       </nav>
+      :
+      null}
     </main>
   );
 }
