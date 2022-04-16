@@ -1,13 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import logo from '../images/logo.jpeg';
 import '../css/header.css';
 import { useNavigate } from 'react-router-dom';
 import { SearchBar } from './sub-components';
-import { getProducts } from '../services/apiService';
-import myContext from '../context/myContext';
 
 function Header() {
-  const { setAllProducts, setActualPage, setTotalPages, setProductPage } = useContext(myContext);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
@@ -16,11 +13,7 @@ function Header() {
       return navigate("/maintenence");
     }
 
-    const firstProducts = await getProducts(1);
-    setAllProducts(firstProducts.items);
-    setActualPage(firstProducts.page);
-    setTotalPages(firstProducts.totalPages);
-    setProductPage(firstProducts.page);
+    window.location.reload();
   };
 
   const handleSearch = () => {
