@@ -7,13 +7,24 @@ function Header() {
   const navigate = useNavigate();
 
   const handleHeaderButton = ({ target: { value } }) => {
-    console.log(value !== "Loja");
     if (value !== "Loja") {
       return navigate("/maintenence");
     }
 
     return navigate("/");
   };
+
+  const handleSearch = () => {
+    console.log('search');
+  };
+
+  const handleProfile = () => {
+    console.log('user');
+  }
+
+  const handleCart = () => {
+    console.log('carrinho');
+  }
 
   return(
     <header className="header-container">
@@ -67,14 +78,24 @@ function Header() {
         </button>
       </nav>
       <nav>
-        <button id="icons-buttons">
+        <button
+          id="icons-buttons"
+          onClick={ handleSearch }
+        >
           <i className="fas fa-search" />
         </button>
-        <button id="icons-buttons">
+        <button
+          id="icons-buttons"
+          onClick={ handleProfile }
+        >
           <i className="far fa-user" />
         </button>
-        <button id="icons-buttons">
-        <i className="fa fa-shopping-cart" aria-hidden="true" />
+        <button
+          id="icons-buttons"
+          name="cart"
+          onClick={ handleCart }
+        >
+        <i className="fa fa-shopping-cart" />
         </button>
       </nav>
     </header>
