@@ -1,0 +1,11 @@
+.maintenence-container {
+  height: 100vh;
+  width: 100;
+}
+
+.maintenence-container > button {
+  font-size: 1.3em;
+  bottom: 20%;
+  left: 40%;
+  position: absolute;
+}
