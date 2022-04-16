@@ -32,7 +32,7 @@ function Details() {
     getItemsFromStorage.push(newSale);
 
     setItemsSold(getItemsFromStorage);
-    navigate("/");
+    navigate("/success");
   };
 
   return (

@@ -2,10 +2,12 @@ import Main from "./Main";
 import ProductDetails from './ProductDetails';
 import Maintenence from './Maintenence';
 import Cart from './Cart';
+import Success from './Success';
 
 export {
   Main,
   ProductDetails,
   Maintenence,
   Cart,
+  Success,
 }
