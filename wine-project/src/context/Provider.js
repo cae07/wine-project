@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import myContext from './myContext';
 
 function Provider({ children }) {
+  const [allproducts, setAllProducts] = useState([]);
   const [product, setProduct] = useState([]);
 
   const providerValue = {
+    allproducts,
+    setAllProducts,
     product,
     setProduct,
   };
