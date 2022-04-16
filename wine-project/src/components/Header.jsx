@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import logo from '../images/logo.jpeg';
-import '../css/header.css';
 import { useNavigate } from 'react-router-dom';
 import { SearchBar } from './sub-components';
+import myContext from '../context/myContext';
+import '../css/header.css';
 
 function Header() {
-  const [show, setShow] = useState(false);
+  const { show, setShow } = useContext(myContext);
   const navigate = useNavigate();
 
   const handleHeaderButton = async ({ target: { value } }) => {

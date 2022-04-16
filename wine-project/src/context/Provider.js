@@ -9,6 +9,7 @@ function Provider({ children }) {
   const [totalPages, setTotalPages] = useState(0);
   const [productPage, setProductPage] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  const [show, setShow] = useState(false);
 
   const providerValue = {
     allproducts,
@@ -23,6 +24,8 @@ function Provider({ children }) {
     setProductPage,
     totalItems,
     setTotalItems,
+    show,
+    setShow,
   };
 
   return (
