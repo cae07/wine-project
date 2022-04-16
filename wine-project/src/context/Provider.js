@@ -3,11 +3,29 @@ import PropTypes from 'prop-types';
 import myContext from './myContext';
 
 function Provider({ children }) {
+  const [allproducts, setAllProducts] = useState([]);
   const [product, setProduct] = useState([]);
+  const [actualPage, setActualPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [productPage, setProductPage] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
+  const [show, setShow] = useState(false);
 
   const providerValue = {
+    allproducts,
+    setAllProducts,
     product,
     setProduct,
+    actualPage,
+    setActualPage,
+    totalPages,
+    setTotalPages,
+    productPage,
+    setProductPage,
+    totalItems,
+    setTotalItems,
+    show,
+    setShow,
   };
 
   return (

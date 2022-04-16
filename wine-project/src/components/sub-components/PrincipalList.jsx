@@ -1,36 +1,62 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import myContext from '../../context/myContext';
-import getProducts from '../../services/apiService';
+import { getProducts } from '../../services/apiService';
 
 function PrincipalList() {
-  const { setProduct } = useContext(myContext);
-  const [products, setProducts] = useState([]);
-  const [totalItems, setTotalItems] = useState(0);
-  const [actualPage, setActualPage] = useState(0);
+  const {
+    setProduct,
+    allproducts,
+    setAllProducts,
+    actualPage,
+    setActualPage,
+    totalPages,
+    setTotalPages,
+    productPage,
+    setProductPage,
+    totalItems,
+    setTotalItems,
+   } = useContext(myContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     async function getFirstProducts() {
       const firstProducts = await getProducts(1);
-      setProducts(firstProducts.items);
+      setAllProducts(firstProducts.items);
       setTotalItems(firstProducts.totalItems);
       setActualPage(firstProducts.page);
-      console.log(firstProducts);
+      setProductPage(actualPage);
+      setTotalPages(firstProducts.totalPages);
     }
     getFirstProducts();
   }, []);
   
-  const handleClick = (product) => {
+  const handleProductClick = (product) => {
     setProduct(product);
     navigate(`/${product.id}`);
+  };
+
+  const handlePage = async ({ target }) => {
+    const pageNumber = target.innerText;
+    const getNewPage = await getProducts(pageNumber);
+    setAllProducts(getNewPage.items);
+    setProductPage(getNewPage.page);
+  };
+
+  const handleNextPage = async () => {
+    const getNewPage = await getProducts(productPage + 1);
+    setAllProducts(getNewPage.items);
+    setProductPage(getNewPage.page);
+    if (productPage >= 3 ) {
+      setActualPage(getNewPage.page - 2);
+    }
   };
 
   return (
     <main className="list-container">
       <h3>{ `${totalItems} produtos encontrados` }</h3>
       <div className="cards-container">
-        {products.map((product) => (
+        {allproducts.map((product) => (
           <section className="cards" key={ product.id }>
             <div className="product-card">
               <img
@@ -57,18 +83,21 @@ function PrincipalList() {
             </div>
             <button
               type="button"
-              onClick={ () => handleClick(product) }
+              onClick={ () => handleProductClick(product) }
             >
               ADICIONAR
             </button>
           </section>
         ))}
       </div>
+      {totalItems >  0 && totalItems > 60
+      ?
       <nav className="next-buttons-container">
         <button
           type="button"
           id="next-button"
           className="next-button-1"
+          onClick={ (e) => handlePage(e) }
         >
             { actualPage }
         </button>
@@ -76,6 +105,7 @@ function PrincipalList() {
           type="button"
           id="next-button"
           className="next-button-2"
+          onClick={ (e) => handlePage(e) }
         >
         { actualPage + 1 }
         </button>
@@ -83,16 +113,24 @@ function PrincipalList() {
           type="button"
           id="next-button"
           className="next-button-1"
+          onClick={ (e) => handlePage(e) }
         >
         { actualPage + 2 }
         </button>
+        {totalPages !== productPage
+        ?
         <button
           type="button"
           className="button-next"
+          onClick={ handleNextPage }
         >
           { `... Próximo >>` }
         </button>
+        : null
+        }
       </nav>
+      :
+      null}
     </main>
   );
 }
