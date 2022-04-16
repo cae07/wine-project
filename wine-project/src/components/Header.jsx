@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../images/logo.jpeg';
 import '../css/header.css';
 import { useNavigate } from 'react-router-dom';
 import { SearchBar } from './sub-components';
+import getProducts from '../services/apiService';
+import myContext from '../context/myContext';
 
 function Header() {
+  const { setAllProducts, setActualPage, setTotalPages, setProductPage } = useContext(myContext);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
-  const handleHeaderButton = ({ target: { value } }) => {
+  const handleHeaderButton = async ({ target: { value } }) => {
     if (value !== "Loja") {
       return navigate("/maintenence");
     }
 
-    return navigate("/");
+    const firstProducts = await getProducts(1);
+    setAllProducts(firstProducts.items);
+    setActualPage(firstProducts.page);
+    setTotalPages(firstProducts.totalPages);
+    setProductPage(firstProducts.page);
   };
 
   const handleSearch = () => {

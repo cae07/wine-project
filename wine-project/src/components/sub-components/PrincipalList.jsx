@@ -4,18 +4,24 @@ import myContext from '../../context/myContext';
 import getProducts from '../../services/apiService';
 
 function PrincipalList() {
-  const { setProduct } = useContext(myContext);
-  const [products, setProducts] = useState([]);
+  const {
+    setProduct,
+    allproducts,
+    setAllProducts,
+    actualPage,
+    setActualPage,
+    totalPages,
+    setTotalPages,
+    productPage,
+    setProductPage,
+   } = useContext(myContext);
   const [totalItems, setTotalItems] = useState(0);
-  const [actualPage, setActualPage] = useState(0);
-  const [productPage, setProductPage] = useState(0);
-  const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     async function getFirstProducts() {
       const firstProducts = await getProducts(1);
-      setProducts(firstProducts.items);
+      setAllProducts(firstProducts.items);
       setTotalItems(firstProducts.totalItems);
       setActualPage(firstProducts.page);
       setProductPage(actualPage);
@@ -32,13 +38,13 @@ function PrincipalList() {
   const handlePage = async ({ target }) => {
     const pageNumber = target.innerText;
     const getNewPage = await getProducts(pageNumber);
-    setProducts(getNewPage.items);
+    setAllProducts(getNewPage.items);
     setProductPage(getNewPage.page);
   };
 
   const handleNextPage = async () => {
     const getNewPage = await getProducts(productPage + 1);
-    setProducts(getNewPage.items);
+    setAllProducts(getNewPage.items);
     setProductPage(getNewPage.page);
     if (productPage >= 3 ) {
       setActualPage(getNewPage.page - 2);
@@ -49,7 +55,7 @@ function PrincipalList() {
     <main className="list-container">
       <h3>{ `${totalItems} produtos encontrados` }</h3>
       <div className="cards-container">
-        {products.map((product) => (
+        {allproducts.map((product) => (
           <section className="cards" key={ product.id }>
             <div className="product-card">
               <img
