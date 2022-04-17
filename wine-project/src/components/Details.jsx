@@ -72,7 +72,7 @@ function Details() {
               ))}
             </div>
           </section>
-          <h1>{`R$ ${(product.priceMember).toFixed(2)}` }</h1>
+          <h1 id="detail-price-member">{`R$ ${(product.priceMember).toFixed(2)}` }</h1>
           <span className="detail-price-nomsocio">
             { `NÃO SÓCIO R$ ${(product.priceNonMember).toFixed(2)}/UN.` }
           </span>
