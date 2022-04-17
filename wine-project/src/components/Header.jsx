@@ -46,7 +46,7 @@ function Header() {
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link>
+          <Nav.Link id="first-buttons">
             <button
               type="button"
               id="header-buttons"

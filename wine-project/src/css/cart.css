@@ -53,15 +53,31 @@
 }
 
 @media screen and (max-width: 600px) {
+  .header-cart {
+    width: 68vh;
+  }
+
   .header-cart > h3:last-child {
     margin-left: 22.5%;
     text-align: center;
-    width: 300px;
+    width: 250px;
   }
 
   .table-container {
     font-size: 0.9em;
     margin: 25px 3%;
+  }
+
+  #qtd {
+    position: relative;
+    visibility: hidden;
+  }
+
+  #qtd:after {
+    content: "Qtd";
+    left: 10px;
+    position: absolute;
+    visibility: visible;
   }
 
   .cart-buttons-container {

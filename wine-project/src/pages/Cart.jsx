@@ -40,12 +40,12 @@ function Cart() {
         <h3>{ totalValue() }</h3>
       </div>
       <section className="table-container">
-        <Table striped bordered hover>
+        <Table striped bordered hover size="sm">
           <thead>
               <tr>
                 <th>Item</th>
                 <th>Nome</th>
-                <th>Quantidade</th>
+                <th id="qtd">Quantidade</th>
                 <th>Valor Unitário</th>
                 <th>Sub-total</th>
                 <th>Remover</th>
@@ -56,7 +56,7 @@ function Cart() {
                 <tr key={ idx }>
                   <td>{ idx + 1 }</td>
                   <td>{ item.name }</td>
-                  <td>{ item.quantity }</td>
+                  <td id="test">{ item.quantity }</td>
                   <td>{ (item.price).toFixed(2) }</td>
                   <td>{ (item.price * item.quantity).toFixed(2) }</td>
                   <td>
