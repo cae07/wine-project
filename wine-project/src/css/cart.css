@@ -1,0 +1,52 @@
+.header-cart {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-cart > h3:last-child {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-right: 25px;
+  padding: 7px 25px;
+}
+
+.table-container {
+  margin: 25px 7.5%;
+  width: 85%;
+}
+
+.delete-item-cart-button {
+  border: none;
+  border-radius: 3px;
+  background-color: orangered;
+  color: white;
+  padding: 1px 5px;
+}
+
+.delete-item-cart-button:hover {
+  background-color: red;
+  box-shadow: 3px 3px 20px orangered;
+  color: yellow;
+}
+
+.cart-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#cart-button {
+  background: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px;
+  padding: 5px;
+}
+
+#cart-button:hover {
+  background-color: rgb(54, 189, 54);
+  box-shadow: 5px 5px 10px greenyellow;
+  color: greenyellow;
+  font-weight: 900;
+}

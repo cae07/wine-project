@@ -25,11 +25,11 @@ function Header() {
 
   const handleProfile = () => {
     console.log('user');
-  }
+  };
 
   const handleCart = () => {
-    console.log('carrinho');
-  }
+    navigate("/cart");
+  };
 
   return(
     <header>
