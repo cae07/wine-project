@@ -1,1 +1,3 @@
 # arquivos para o esLint ignorar
+tests
+cypress

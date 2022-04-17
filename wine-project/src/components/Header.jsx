@@ -94,6 +94,7 @@ function Header() {
           <Nav.Link>
             <button
               id="icons-buttons"
+              className="search-button-header-cypress"
               onClick={ handleSearch }
             >
               <i className="fas fa-search" />
@@ -106,6 +107,7 @@ function Header() {
             </button>
             <button
               id="icons-buttons"
+              className="cart-button-cypress"
               name="cart"
               onClick={ handleCart }
             >
