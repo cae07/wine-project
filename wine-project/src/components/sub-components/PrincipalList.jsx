@@ -17,7 +17,6 @@ function PrincipalList() {
     setProductPage,
     totalItems,
     setTotalItems,
-    setSoldItems,
    } = useContext(myContext);
   const navigate = useNavigate();
 
@@ -27,8 +26,6 @@ function PrincipalList() {
     if (!cartItems) {
       setItemsSold([]);
     }
-
-    setSoldItems(cartItems);
   }, []);
 
   // faz primeira busca api quando pagina abrir
