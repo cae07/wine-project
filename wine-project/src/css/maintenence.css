@@ -9,3 +9,16 @@
   left: 40%;
   position: absolute;
 }
+
+@media screen and (max-width: 768px) {
+  .maintenence-container > img {
+    margin-left: -40px;
+    width: 400px
+  }
+
+  .maintenence-container > button {
+    bottom: 40%;
+    font-size: 1.5em;
+    left: 20%;
+  }
+}
