@@ -140,10 +140,11 @@ A aplicação rodará na porta 3000.
 ---
 
 #### Iniciar aplicação
-- npm run cypress:open
+- npm start
 
 #### Rodar testes
 - npm run cypress:open
+- necessário aplicação estar rodando na porta 3000
 
 ---
 
