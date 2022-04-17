@@ -28,6 +28,11 @@ function Cart() {
       return `Total: ${total}`;
   };
 
+  const handleBuy = () => {
+    localStorage.clear();
+    return navigate("/contatos");
+  };
+
   return (
     <main>
       <div className="header-cart">
@@ -83,7 +88,7 @@ function Cart() {
           <button
             type="button"
             id="cart-button"
-            onClick={ () => navigate("/contatos") }
+            onClick={ handleBuy }
           >
             Finalizar Compra
           </button>
