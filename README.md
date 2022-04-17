@@ -149,7 +149,7 @@ A aplicação rodará na porta 3000.
 
 ## Link para o projeto
 
-`aqui vai o link para o projeto`
+`https://wine-project-two.vercel.app/`
 
 ---
 
