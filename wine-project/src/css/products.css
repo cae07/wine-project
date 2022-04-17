@@ -131,28 +131,17 @@
   margin: 15px 8px;
 }
 
-.next-button-1 {
-  border: 1px solid rgb(143, 0, 143);
-  color: rgb(143, 0, 143);
-  height: 40px;
-  padding: 5px;
-  width: 40px;
-}
-
 .next-button-2 {
+  background-color: rgb(143, 0, 143);
   border: 1px solid rgb(143, 0, 143);
-  color: rgb(143, 0, 143);
+  color: white;
+  font-weight: 900;
   width: 80px;
 }
 
 .button-next {
   border: none;
   color: rgb(143, 0, 143);
-}
-
-#next-button:focus {
-  background-color: rgb(143, 0, 143);
-  color: white;
   font-weight: 900;
 }
 
