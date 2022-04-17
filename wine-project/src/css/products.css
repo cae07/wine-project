@@ -155,3 +155,33 @@
   color: white;
   font-weight: 900;
 }
+
+@media screen and (max-width: 628px) {
+  .aside-container {
+    display: none;
+  }
+
+  .list-container {
+    margin-left: 10px;
+  }
+
+  .product-card {
+    /* border: 1px solid red; */
+    font-size: 0.8em;
+    max-width: 160px;
+    margin-top: 5px;
+  }
+
+  .product-card > img:first-child {
+    left: 40px
+  }
+
+  .cards > button {
+    min-width: 160px;
+  }
+
+  .cards-container {
+    margin-left: -3%;
+  }
+  
+}
