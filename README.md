@@ -33,8 +33,6 @@ Copie o ssh do projeto `git@github.com:cae07/wine-project.git`
 
 * `git clone git@github.com:cae07/wine-project.git`
 * `cd wine-project`
-* `cd wine-project`
-- Desculpe por isso, criei uma pasta dentro da outra
 * `npm install`
 * `npm start`
 
