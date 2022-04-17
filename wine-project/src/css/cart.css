@@ -1,6 +1,7 @@
 .header-cart {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -49,4 +50,23 @@
   box-shadow: 5px 5px 10px greenyellow;
   color: greenyellow;
   font-weight: 900;
+}
+
+@media screen and (max-width: 600px) {
+  .header-cart > h3:last-child {
+    margin-left: 22.5%;
+    text-align: center;
+    width: 300px;
+  }
+
+  .table-container {
+    font-size: 0.9em;
+    margin: 25px 3%;
+  }
+
+  .cart-buttons-container {
+    margin-top: 25px;
+    width: 70vh;
+  }
+  
 }

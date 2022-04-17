@@ -4,10 +4,7 @@
 }
 
 .header-container {
-  align-items: center;
   border-bottom: 2px solid rgb(194, 194, 194);
-  display: flex;
-  justify-content: space-between;
 }
 
 #header-buttons {
@@ -19,6 +16,10 @@
   color: gray;
   margin: 15px 15px;
   padding: 5px;
+}
+
+.container-search-button {
+  margin: 0 25px;
 }
 
 #icons-buttons {
@@ -55,4 +56,8 @@
   border: none;
   font-weight: 900;
   height: 50%;
+}
+
+#toogle {
+  margin: 0 25px;
 }

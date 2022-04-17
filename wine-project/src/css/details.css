@@ -41,7 +41,6 @@
 }
 
 .detail-info-rating-container {
-  /* border: 1px solid red; */
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -120,4 +119,45 @@
   color: white;
   font-size: 0.9em;
   margin-left: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .details-container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .details-container > img {
+    width: 250px;
+  }
+
+  .aside-details-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    width: 80%;
+  }
+
+  .aside-details-container >section:first-child {
+    justify-content: center;
+  }
+
+  .detail-info-rating-container {
+    margin-top: 10px;
+    width: 90%;
+  }
+
+  .detail-info-rating-container > img {
+    margin: 0;
+  }
+
+  .detail-info-rating-container > div {
+    margin-left: 8%;
+  }
+
+  #detail-price-member {
+    font-size: 2.5em;
+  }
 }
