@@ -46,20 +46,18 @@ function PrincipalList() {
     navigate(`/${product.id}`);
   };
 
-  const handlePage = async ({ target }) => {
-    const pageNumber = target.innerText;
-    const getNewPage = await getProducts(pageNumber);
+  const handleBeforePage = async () => {
+    const getNewPage = await getProducts(productPage - 1);
     setAllProducts(getNewPage.items);
     setProductPage(getNewPage.page);
-  };
+    setActualPage(getNewPage.page);
+  }
 
   const handleNextPage = async () => {
     const getNewPage = await getProducts(productPage + 1);
     setAllProducts(getNewPage.items);
     setProductPage(getNewPage.page);
-    if (productPage >= 3 ) {
-      setActualPage(getNewPage.page - 2);
-    }
+    setActualPage(getNewPage.page);
   };
 
   return (
@@ -101,46 +99,36 @@ function PrincipalList() {
         ))}
       </div>
       {totalItems >  0 && totalItems > 60
-      ?
-      <nav className="next-buttons-container">
-        <button
-          type="button"
-          id="next-button"
-          className="next-button-1"
-          onClick={ (e) => handlePage(e) }
-        >
-            { actualPage }
-        </button>
-        <button
-          type="button"
-          id="next-button"
-          className="next-button-2"
-          onClick={ (e) => handlePage(e) }
-        >
-        { actualPage + 1 }
-        </button>
-        <button
-          type="button"
-          id="next-button"
-          className="next-button-1"
-          onClick={ (e) => handlePage(e) }
-        >
-        { actualPage + 2 }
-        </button>
-        {totalPages !== productPage
-        ?
-        <button
-          type="button"
-          className="button-next"
-          onClick={ handleNextPage }
-        >
-          { `... Próximo >>` }
-        </button>
-        : null
-        }
-      </nav>
-      :
-      null}
+        &&
+        <nav className="next-buttons-container">
+          {actualPage > 1 &&
+            <button
+              type="button"
+              className="button-next"
+              onClick={ handleBeforePage }
+            >
+              { `<< Anterior ...` }
+            </button>
+          }
+          <button
+            type="button"
+            id="next-button"
+            className="next-button-2"
+          >
+              { actualPage }
+          </button>
+          {totalPages !== productPage
+            &&
+            <button
+              type="button"
+              className="button-next"
+              onClick={ handleNextPage }
+            >
+              { `... Próximo >>` }
+            </button>
+          }
+        </nav>
+      }
     </main>
   );
 }
