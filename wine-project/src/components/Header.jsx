@@ -24,7 +24,7 @@ function Header() {
   };
 
   const handleProfile = () => {
-    console.log('user');
+    navigate("/maintenence");
   };
 
   const handleCart = () => {
