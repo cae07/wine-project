@@ -18,8 +18,13 @@
   padding: 5px;
 }
 
+#logo-responsive {
+  margin: 0 -35px;
+  width: 80px;
+}
+
 .container-search-button {
-  margin: 0 25px;
+  margin: 0 8px;
 }
 
 #icons-buttons {
@@ -59,5 +64,5 @@
 }
 
 #toogle {
-  margin: 0 25px;
+  margin: 0 15px;
 }
