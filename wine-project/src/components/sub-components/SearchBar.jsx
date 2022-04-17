@@ -22,7 +22,7 @@ function SearchBar() {
           type="text"
           value={ searchName }
           onChange={ (e) => setSearchName(e.target.value) }
-          placeholder="digite nome ou parte do nome"
+          placeholder="pesquise por nome"
           id="form-search-control"
         />
         <Button
