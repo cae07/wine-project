@@ -1,0 +1,14 @@
+.success-container {
+  background-image: url('../images//sucesso.jpeg');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+}
+
+.success-container > h1 {
+  font-size: 3em;
+  height: 100vh;
+  margin: 20% 0;
+  text-align: center;
+  width: 100%;
+}

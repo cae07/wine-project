@@ -3,13 +3,12 @@ import myContext from '../context/myContext';
 import StarCreator from '../utils/StarCreator';
 import star from '../images/star.png';
 import { useNavigate } from 'react-router-dom';
+import { getItemsSold, setItemsSold } from '../utils/localStorage';
 
 function Details() {
   const { product } = useContext(myContext);
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
-
-  console.log(product);
 
   const handleLess = () => {
     if (quantity === 0) return null;
@@ -18,6 +17,22 @@ function Details() {
 
   const handleMore = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleItemToCart = () => {
+    const newSale = {
+      id: product.id,
+      name: product.name,
+      volume: product.volume || product.size,
+      quantity,
+      price: product.priceMember,
+    };
+
+    const getItemsFromStorage = getItemsSold();
+    getItemsFromStorage.push(newSale);
+
+    setItemsSold(getItemsFromStorage);
+    navigate("/success");
   };
 
   return (
@@ -67,7 +82,12 @@ function Details() {
             <button type="button" onClick={ handleLess }>-</button>
             <input type="text" value={ quantity } />
             <button type="button" onClick={ handleMore }>+</button>
-            <button>ADICIONAR</button>
+            <button
+              type="button"
+              onClick={ handleItemToCart }
+            >
+              ADICIONAR
+            </button>
           </div>
         </aside>
       </section>

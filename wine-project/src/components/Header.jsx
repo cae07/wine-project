@@ -24,12 +24,12 @@ function Header() {
   };
 
   const handleProfile = () => {
-    console.log('user');
-  }
+    navigate("/maintenence");
+  };
 
   const handleCart = () => {
-    console.log('carrinho');
-  }
+    navigate("/cart");
+  };
 
   return(
     <header>
