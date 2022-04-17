@@ -6,6 +6,7 @@ import {
   Maintenence,
   Cart,
   Success,
+  ContatoPage,
 } from './pages';
 
 function App() {
@@ -16,8 +17,10 @@ function App() {
       <Route path="/maintenence" element={ <Maintenence /> } />
       <Route path="cart" element={ <Cart />} />
       <Route path="/success" element={ <Success /> } />
+      <Route path="/contatos" element={ <ContatoPage /> } />
     </Routes>
   );
 }
 
 export default App;
+
