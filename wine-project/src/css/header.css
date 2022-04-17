@@ -7,12 +7,6 @@
   border-bottom: 2px solid rgb(194, 194, 194);
 }
 
-/* #header-sub-container {
-  align-items: center;  
-  display: flex;
-  justify-content: space-between;
-} */
-
 #header-buttons {
   background: none;
   background-color: none;
@@ -66,7 +60,4 @@
 
 #toogle {
   margin: 0 25px;
-}
-
-.test {
 }
