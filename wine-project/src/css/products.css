@@ -174,3 +174,9 @@
   }
   
 }
+
+@media screen and (min-width: 768px) {
+  .next-buttons-container {
+    margin-left: -17%;
+  }
+}
