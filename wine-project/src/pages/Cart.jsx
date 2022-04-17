@@ -68,6 +68,7 @@ function Cart() {
                     <button
                       type="button"
                       onClick={ () => handleDelete(item.id) }
+                      id={ `delete-${item.id}-cypress` }
                       className="delete-item-cart-button"
                     >
                       Remover

@@ -92,6 +92,7 @@ function PrincipalList() {
             <button
               type="button"
               onClick={ () => handleProductClick(product) }
+              className={ `botao-adicionar-${product.id}` }
             >
               ADICIONAR
             </button>
@@ -105,6 +106,7 @@ function PrincipalList() {
             <button
               type="button"
               className="button-next"
+              id="before-button"
               onClick={ handleBeforePage }
             >
               { `<< Anterior ...` }
@@ -122,6 +124,7 @@ function PrincipalList() {
             <button
               type="button"
               className="button-next"
+              id="after-button"
               onClick={ handleNextPage }
             >
               { `... Próximo >>` }
